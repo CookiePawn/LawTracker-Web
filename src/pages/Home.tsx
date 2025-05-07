@@ -132,6 +132,16 @@ const FooterContent = styled.div`
   margin: 0 auto;
 `;
 
+const ContactInfo = styled.div`
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+`;
+
+const ContactItem = styled.p`
+  margin: 0.3rem 0;
+`;
+
 const FooterLinks = styled.div`
   display: flex;
   justify-content: center;
@@ -211,6 +221,11 @@ const Home: React.FC = () => {
       </Container>
       <Footer>
         <FooterContent>
+          <ContactInfo>
+            <ContactItem>이름: 안준철</ContactItem>
+            <ContactItem>이메일: dev.jcahn@gmail.com</ContactItem>
+            <ContactItem>전화번호: 010-8915-2856</ContactItem>
+          </ContactInfo>
           <FooterLinks>
             <FooterLink href="/privacy">개인정보 처리 방침</FooterLink>
             <FooterLink href="/terms">이용 약관</FooterLink>
