@@ -45,8 +45,27 @@ const BackButton = styled.button`
   }
 `;
 
+const ApiLinkButton = styled.button`
+  background: none;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1rem;
+  margin-top: 1rem;
+  
+  &:hover {
+    color: #0056b3;
+  }
+`;
+
 const Terms: React.FC = () => {
   const navigate = useNavigate();
+
+  const handleApiLink = () => {
+    window.open('https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do', '_blank');
+  };
 
   return (
     <Container>
@@ -70,6 +89,22 @@ const Terms: React.FC = () => {
         <br />
         1. 법률 정보 제공 서비스
       </Text>
+
+      <SectionTitle>제4조 (데이터 출처)</SectionTitle>
+      <Text>
+        본 서비스는 대한민국 국회에서 제공하는 열린국회정보 Open API를 활용하여 제작되었습니다. 모든 법률 정보는 국회에서 공식적으로 제공하는 데이터를 기반으로 합니다.
+      </Text>
+
+      <SectionTitle>제5조 (면책 조항)</SectionTitle>
+      <Text>
+        본 서비스는 대한민국 국회의 공식 서비스가 아니며, 국회를 대표하지 않습니다. 제공되는 정보는 열린국회정보 Open API를 통해 수집된 데이터를 기반으로 하며, 최신 정보와 차이가 있을 수 있습니다.
+        <br /><br />
+        정확한 법률 정보는 국회 홈페이지 또는 관련 공식 채널을 통해 확인하시기 바랍니다.
+      </Text>
+
+      <ApiLinkButton onClick={handleApiLink}>
+        열린국회정보 Open API 바로가기
+      </ApiLinkButton>
 
       <BackButton onClick={() => navigate(-1)}>Back</BackButton>
     </Container>
